@@ -1,0 +1,38 @@
+@import "./variable";
+
+.settings-table {
+  th, td {
+    padding: 5px 10px;
+  }
+  th {
+    border-top: 1px solid @border-color-split;
+  }
+  th:last-child, td:last-child {
+    border-right: 1px solid @border-color-split;
+  }
+  th:first-child, td:first-child {
+    border-left: 1px solid @border-color-split;
+  }
+
+  td {
+    border-bottom: 1px solid @border-color-split;
+  }
+
+  & > thead > tr {
+    background: @background-color-base;
+  }
+
+  th {
+    text-align: left;
+  }
+
+  .add-icon {
+    visibility: hidden;
+  }
+
+  tr:last-child {
+    .add-icon {
+      visibility: visible;
+    }
+  }
+}

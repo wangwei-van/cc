@@ -1,0 +1,97 @@
+@btn-prefix-cls: ~"@{css-prefix}btn";
+
+
+.normal-btn (@background) {
+    box-shadow: 0 2px 5px fade(@background, 30%);
+    border-color: @background;
+    &:focus {
+      box-shadow: 0 2px 5px fade(@background, 30%);
+      color: @btn-primary-color;
+    }
+    &:hover {
+      background-color: shade(@background, 6.3%);
+      box-shadow: 0 2px 5px fade(shade(@background, 6.3%), 30%);
+      color: @btn-primary-color;
+    }
+    &:active,
+    &.active {
+      box-shadow: inset 0 0 15px rgba(0,0,0,.1)
+    }
+    &.disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        &,
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            box-shadow: none;
+            border-color: tint(@background, 60%);
+            background-color: tint(@background, 60%);
+            color: @btn-primary-color;
+        }
+    }
+}
+
+.@{btn-prefix-cls} {
+    &:hover {
+      background-color: @background-color-base;
+      border-color: @btn-default-border;
+      color: @btn-default-color;
+    }
+    &:focus {
+      box-shadow: none;
+    }
+    &:active,
+    &.active {
+        box-shadow: inset 0 0 15px rgba(0,0,0,.1)
+    }
+
+    &&-primary {
+        .normal-btn(@btn-primary-bg)
+    }
+    &&-success {
+        .normal-btn(@success-color)
+    }
+    &&-error {
+        .normal-btn(@error-color)
+    }
+    &&-info {
+        .normal-btn(@info-color)
+    }
+    &&-warning {
+        .normal-btn(@warning-color)
+    }
+
+    &&-ghost {
+        color: @btn-primary-bg;
+        border-color: @btn-primary-bg;
+        &:focus {
+          box-shadow: none;
+        }
+        &:hover {
+          color: @btn-primary-color;
+          background-color: shade(@btn-primary-bg, 6.3%);
+          box-shadow: 0 2px 5px fade(shade(@btn-primary-bg, 6.3%), 30%);
+        }
+        &:active,
+        &.active {
+          box-shadow: inset 0 0 15px rgba(0,0,0,.1)
+        }
+        &.disabled,
+        &[disabled],
+        fieldset[disabled] & {
+          &,
+          &:hover,
+          &:focus,
+          &:active,
+          &.active {
+              box-shadow: none;
+              border-color: @background-color-base;
+              background-color: @background-color-base;
+              color: @btn-disable-color;
+          }
+        }
+    }
+
+}

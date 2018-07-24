@@ -1,0 +1,37 @@
+@select-prefix-cls: ~"@{css-prefix}select";
+@select-item-prefix-cls: ~"@{css-prefix}select-item";
+@select-group-prefix-cls: ~"@{css-prefix}select-group";
+
+.@{select-prefix-cls} {
+
+    &:focus {
+      .@{select-prefix-cls}-selection{
+          box-shadow: 1px 0 6px fade(@input-focus-border-color, 30%);
+      }
+    }
+}
+
+.@{form-item-prefix-cls}-error{
+    &:focus {
+        .@{select-prefix-cls}-selection{
+            box-shadow: 1px 0 6px fade(@error-color, 30%);
+        }
+    }
+
+    .@{select-prefix-cls}{
+        &-visible .@{select-prefix-cls}-selection{
+            box-shadow: 1px 0 6px fade(@error-color, 30%);
+        }
+    }
+}
+
+.@{select-item-prefix-cls} {
+    &-selected {
+        color: @selected-color;
+        background-color: #fff;
+    }
+    &-focus, &-selected:hover {
+        color: @selected-color;
+        background: @background-color-select-hover;
+    }
+}

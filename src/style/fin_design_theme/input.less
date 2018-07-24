@@ -1,0 +1,15 @@
+@input-prefix-cls: ~"@{css-prefix}input";
+
+.@{input-prefix-cls} {
+    &:focus {
+        box-shadow: 1px 0 6px fade(@input-focus-border-color, 30%);;
+    }
+}
+
+.@{form-item-prefix-cls}-error{
+    .@{input-prefix-cls}{
+        &, &:focus {
+            box-shadow: 1px 0 6px fade(@error-color, 30%);;
+        }
+    }
+}

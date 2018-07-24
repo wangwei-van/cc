@@ -1,0 +1,15 @@
+@dropdown-prefix-cls: ~"@{css-prefix}dropdown";
+@dropdown-item-prefix-cls: ~"@{dropdown-prefix-cls}-item";
+
+
+
+.@{dropdown-item-prefix-cls} {
+    &-selected {
+        color: @selected-color;
+        background-color: #fff;
+    }
+    &-focus, &-selected:hover {
+        color: @selected-color;
+        background: @background-color-select-hover;
+    }
+}
